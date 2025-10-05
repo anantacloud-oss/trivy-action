@@ -1,8 +1,8 @@
-FROM ghcr.io/cfy9/trivy:0.23.0
+FROM ghcr.io/anantacloud-oss/trivy:0.23.0
 
-LABEL "com.cloudfy9.image.name"="ghcr.io/cfy9/trivy:0.23.0" \
-      "com.cloudfy9.image.description"="Creates trivy docker image" \
-      "com.cloudfy9.image.owner"="cloudfy9"
+LABEL "com.anantacloud.image.name"="ghcr.io/anantacloud/trivy:0.23.0" \
+      "com.anantacloud.image.description"="Trivy Docker Image" \
+      "com.anantacloud.image.owner"="anantacloud"
 
 RUN mkdir -p /apps/trivy
 
