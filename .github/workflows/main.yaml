@@ -1,4 +1,4 @@
-name: Trivy GitHub Action Workflow
+name: trivy action workflow
 on:
   push:
     branches: 
@@ -11,20 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     name: trivy_github_action
     steps:
-      - name: Code Checkout
+      - name: step to checkout code
         uses: actions/checkout@v4
         
-      - name: Run ShellCheck
-        uses: cfy9/shellcheck-action@v0.0.4
+      - name: step to run shellcheck action
+        uses: anantacloud-oss/shellcheck-action@v0.0.1
         with:
           version: v0.8.0
 
-      - name: Dockerfile Linting
+      - name: step to lint Dockerfile
         uses: hadolint/hadolint-action@v3.3.0
         with:
           dockerfile: Dockerfile
 
-      - name: Generate Semantic Version
+      - name: step to generate semantic version
         id: tag_version
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: mathieudutour/github-tag-action@v6.2
@@ -34,7 +34,7 @@ jobs:
           dry_run: false
           create_annotated_tag: true
 
-      - name: Print Semantic Version
+      - name: step to print semantic version
         id: tag_maker
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
