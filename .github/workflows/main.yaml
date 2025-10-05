@@ -12,7 +12,7 @@ jobs:
     name: trivy_github_action
     steps:
       - name: step to checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       - name: step to run shellcheck action
         uses: anantacloud-oss/shellcheck-action@v0.0.1
