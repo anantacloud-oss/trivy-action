@@ -1,6 +1,7 @@
-name: "Trivy GitHub Action"
-author: "Cloudfy9"
+name: trivy action
 description: "GitHub action to scan docker images for vulnerability issues using trivy."
+author: "Ananta Cloud"
+
 inputs:
   image_name:
     description: "This input contains the docker images to scan"
@@ -24,6 +25,7 @@ inputs:
     description: "This input contains the vulnerability types to scan for"
     required: false
     default: "os,library"
+
 branding:
   icon: "camera"
   color: "red"
